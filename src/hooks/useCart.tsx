@@ -92,7 +92,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     try {
       if (amount <= 0) return;
 
-      const data: Stock = await api.get(`stock/${productId}`);
+      const { data } = await api.get(`stock/${productId}`);
       const stockAmount = data.amount;
 
       if (amount > stockAmount) {
